@@ -6,6 +6,10 @@
 	--color-border: #2a3439;
 }
 
+html {
+	font-family: var(--font-suse);
+}
+
 body {
-	@apply text-white bg-bg text-lg;
+	@apply bg-bg text-xl text-white;
 }
