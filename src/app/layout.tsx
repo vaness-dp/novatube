@@ -3,7 +3,7 @@ import { SUSE } from 'next/font/google'
 
 import { Layout } from '@/components/layout/Layout'
 
-import './globals.css'
+import './globals.scss'
 
 const suse = SUSE({
 	variable: '--font-suse',

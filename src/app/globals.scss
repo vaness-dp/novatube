@@ -1,0 +1,49 @@
+@import 'tailwindcss';
+
+:root {
+	--sidebar-width: 15rem;
+}
+
+@theme {
+	--color-primary: #ad2528;
+	--color-bg: #191b28;
+	--color-border: rgba(255, 255, 255, 0.07);
+
+	--padding-layout: 1.2rem;
+
+	--default-transition-duration: 333ms;
+	--default-transition-timing-function: ease-in-out;
+}
+
+html,
+body {
+	@apply bg-bg text-base font-semibold text-white;
+}
+
+button {
+	@apply cursor-pointer;
+}
+
+/* Скрытый сайдбар */
+.hidedSidebar > aside {
+	width: 3.8rem;
+	flex-grow: 0;
+
+	> nav > div:first-child {
+		opacity: 0;
+		transition: opacity 0.35s;
+	}
+}
+
+.hidedSidebar > div {
+	width: 100%;
+}
+
+/* Показанный сайдбар */
+.showedSidebar > aside {
+	width: var(--sidebar-width);
+}
+
+.initialSidebar > aside {
+	transition: width 0.35s;
+}
