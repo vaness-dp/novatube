@@ -48,7 +48,7 @@ export const SIDEBAR_DATA: ISidebarItem[] = [
 	{
 		icon: ListVideo,
 		label: 'Playlists',
-		link: ''
+		link: '/playlists'
 	},
 	{
 		icon: History,
