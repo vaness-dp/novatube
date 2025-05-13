@@ -3,7 +3,9 @@ import { SUSE } from 'next/font/google'
 
 import { Layout } from '@/components/layout/Layout'
 
-import './globals.scss'
+import { Providers } from '@/providers/Providers'
+
+import './globals.css'
 
 const suse = SUSE({
 	variable: '--font-suse',
@@ -23,7 +25,9 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={`${suse.variable} antialiased`}>
-				<Layout>{children}</Layout>
+				<Providers>
+					<Layout>{children}</Layout>
+				</Providers>
 			</body>
 		</html>
 	)

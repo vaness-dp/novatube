@@ -11,12 +11,13 @@ export function Sidebar({
 	isShowedSidebar: boolean
 }) {
 	return (
-		<aside className='p-layout border-border w-60 overflow-hidden border-r whitespace-nowrap'>
+		<aside className='p-layout border-border overflow-hidden border-r whitespace-nowrap'>
 			<SidebarHeader toggleSidebar={toggleSidebar} />
 			<SidebarMenu
 				menu={SIDEBAR_DATA}
 				isShowedSidebar={isShowedSidebar}
 			/>
+
 			<SidebarSubscriptions />
 
 			<>
@@ -25,11 +26,11 @@ export function Sidebar({
 					menu={STUDIO_SIDEBAR_DATA}
 					isShowedSidebar={isShowedSidebar}
 				/>
-				<span className='bg-border my-5 block h-0.25 w-full' />
+				<span className='bg-border my-5 block h-[1px] w-full' />
 			</>
 
 			<SidebarMenu
-				title='More from NovaTube'
+				title='More from Novatube'
 				menu={MORE_SIDEBAR_DATA}
 				isShowedSidebar={isShowedSidebar}
 			/>

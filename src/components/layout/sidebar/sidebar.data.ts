@@ -14,7 +14,7 @@ import {
 } from 'lucide-react'
 
 import { PAGE } from '@/config/public-page.config'
-import { STUDIO_PAGE } from '@/config/studio-page.config'
+import { STUDIO_PAGE } from '@/config/studio-page'
 
 import type { ISidebarItem } from './sidebar.types'
 
@@ -26,7 +26,7 @@ export const SIDEBAR_DATA: ISidebarItem[] = [
 	},
 	{
 		icon: Flame,
-		label: 'Trinding',
+		label: 'Trending',
 		link: PAGE.TRENDING
 	},
 	{
@@ -48,7 +48,7 @@ export const SIDEBAR_DATA: ISidebarItem[] = [
 	{
 		icon: ListVideo,
 		label: 'Playlists',
-		link: '/playlists'
+		link: PAGE.PLAYLISTS()
 	},
 	{
 		icon: History,
@@ -70,7 +70,6 @@ export const MORE_SIDEBAR_DATA: ISidebarItem[] = [
 		link: PAGE.FEEDBACK
 	}
 ]
-
 export const STUDIO_SIDEBAR_DATA: ISidebarItem[] = [
 	{
 		icon: LayoutGrid,
