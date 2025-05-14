@@ -23,7 +23,7 @@ export function SidebarHeader({ toggleSidebar }: { toggleSidebar: () => void }) 
 					color={COLORS.primary}
 					size={28}
 				/>
-				<span className='text-2xl font-bold -tracking-widest'>NovaTube</span>
+				<span className='text-2xl font-bold -tracking-widest'>Novatube</span>
 			</Link>
 		</div>
 	)

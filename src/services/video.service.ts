@@ -8,6 +8,10 @@ class VideoService {
 	getTrendingVideos() {
 		return axiosClassic.get<IVideo[]>(`${this._VIDEOS}/trending`)
 	}
+
+	getExploreVideos() {
+		return axiosClassic.get<IVideo[]>(`${this._VIDEOS}/explore`)
+	}
 }
 
 export const videoService = new VideoService()
