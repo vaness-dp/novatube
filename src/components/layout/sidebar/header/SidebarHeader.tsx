@@ -1,4 +1,4 @@
-import { Menu, SquarePlay } from 'lucide-react'
+import { Menu, Play } from 'lucide-react'
 import Link from 'next/link'
 
 import { COLORS } from '@/constants/colors.constants'
@@ -19,11 +19,11 @@ export function SidebarHeader({ toggleSidebar }: { toggleSidebar: () => void }) 
 				href={PAGE.HOME}
 				className='flex items-center gap-1'
 			>
-				<SquarePlay
+				<Play
 					color={COLORS.primary}
-					size={28}
+					size={25}
 				/>
-				<span className='text-2xl font-bold -tracking-widest'>Novatube</span>
+				<span className='text-2xl font-bold'>NTube</span>
 			</Link>
 		</div>
 	)
