@@ -1,14 +1,12 @@
 import type { Metadata } from 'next'
-import { SUSE } from 'next/font/google'
-
-import { Layout } from '@/components/layout/Layout'
+import { Inter } from 'next/font/google'
 
 import { Providers } from '@/providers/Providers'
 
 import './globals.css'
 
-const suse = SUSE({
-	variable: '--font-suse',
+const inter = Inter({
+	variable: '--font-inter',
 	subsets: ['latin']
 })
 
@@ -27,10 +25,8 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={suse.variable}>
-				<Providers>
-					<Layout>{children}</Layout>
-				</Providers>
+			<body className={inter.variable}>
+				<Providers>{children}</Providers>
 			</body>
 		</html>
 	)

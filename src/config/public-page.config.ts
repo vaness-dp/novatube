@@ -1,5 +1,7 @@
 class PublicPage {
 	AUTH = '/auth'
+	LOGIN = `${this.AUTH}/login`
+	REGISTER = `${this.AUTH}/register`
 
 	HOME = '/'
 	TRENDING = '/trending'
