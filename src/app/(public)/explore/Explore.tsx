@@ -16,9 +16,9 @@ export function Explore() {
 	})
 
 	return (
-		<section className='grid-6-cols pb-5'>
+		<section className='pb-5'>
 			<Heading Icon={Compass}>Explore</Heading>
-			<div className='grid grid-cols-6 gap-6'>
+			<div className='grid-6-cols'>
 				{isLoading ? (
 					<SkeletonLoader
 						count={6}

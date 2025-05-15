@@ -22,6 +22,10 @@ class VideoService {
 		return axiosClassic.get<IVideo[]>(`${this._VIDEOS}/trending`)
 	}
 
+	getVideoGames() {
+		return axiosClassic.get<IVideosPagination>(`${this._VIDEOS}/games`)
+	}
+
 	getExploreVideos() {
 		return axiosClassic.get<IVideosPagination>(`${this._VIDEOS}/explore`)
 	}
