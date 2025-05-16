@@ -53,3 +53,16 @@ button {
 .initialSidebar > aside {
 	transition: width 0.35s;
 }
+
+.recaptcha {
+	filter: invert(1) grayscale(1);
+	transform: scale(0.93);
+
+	> div {
+		margin-left: -0.7rem;
+
+		> div {
+			@apply mx-auto;
+		}
+	}
+}
