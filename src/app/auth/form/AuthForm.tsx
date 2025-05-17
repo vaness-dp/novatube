@@ -1,5 +1,7 @@
 'use client'
 
+import dynamic from 'next/dynamic'
+import { forwardRef } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { useForm } from 'react-hook-form'
 
@@ -7,15 +9,22 @@ import { SkeletonLoader } from '@/ui/SkeletonLoader'
 import { Button } from '@/ui/button/Button'
 import { Field } from '@/ui/field/Field'
 
+import { useAuthStore } from '@/store/useAuthStore'
+
 import { AuthToggle } from './AuthToggle'
 import type { IAuthForm } from './auth-form.types'
 import { useAuthForm } from './useAuthForm'
 
-interface Props {
-	isLogin: boolean
-}
+const DynamicRecaptcha = dynamic(() => import('./Recaptcha').then(mod => mod.Recaptcha))
+const ForwardedRefRecaptcha = forwardRef<ReCAPTCHA>((props, ref) => (
+	<DynamicRecaptcha
+		{...props}
+		forwardedRef={ref}
+	/>
+))
+ForwardedRefRecaptcha.displayName = 'ForwardedRefRecaptcha'
 
-export function AuthForm({ isLogin }: Props) {
+export function AuthForm({ isLogin }: { isLogin: boolean }) {
 	const {
 		register,
 		handleSubmit,
@@ -27,6 +36,8 @@ export function AuthForm({ isLogin }: Props) {
 	})
 
 	const { isLoading, onSubmit, recaptchaRef } = useAuthForm(isLogin ? 'login' : 'register', reset)
+
+	const isLoggedIn = useAuthStore(state => state.isLoggedIn)
 
 	return (
 		<form
@@ -61,13 +72,7 @@ export function AuthForm({ isLogin }: Props) {
 						/>
 					)}
 
-					<ReCAPTCHA
-						ref={recaptchaRef}
-						size='normal'
-						sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string}
-						theme='light'
-						className='recaptcha'
-					/>
+					<ForwardedRefRecaptcha ref={recaptchaRef} />
 				</>
 			)}
 
