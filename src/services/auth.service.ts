@@ -4,7 +4,7 @@ import { useAuthStore } from '@/store/useAuthStore'
 
 import { axiosClassic } from '@/api/axios'
 
-import type { IAuthForm } from '@/app/auth/form/auth-form.types'
+import type { IAuthData } from '@/app/auth/form/auth-form.types'
 import { EnumTokens } from '@/types/auth.types'
 import type { IUser } from '@/types/user.types'
 
@@ -16,12 +16,15 @@ interface IAuthResponse {
 class AuthService {
 	private _AUTH = '/auth'
 
-	async main(type: 'login' | 'register', data: IAuthForm, recaptchaToken?: string | null) {
+	async main(type: 'login' | 'register', data: IAuthData, recaptchaToken?: string | null) {
+		console.log(`[authService] ${type} called with email:`, data.email)
 		const response = await axiosClassic.post<IAuthResponse>(`${this._AUTH}/${type}`, data, {
 			headers: {
 				recaptcha: recaptchaToken
 			}
 		})
+
+		console.log('Response from server:', response.data)
 
 		if (response.data.accessToken) {
 			this._saveTokenStorage(response.data.accessToken)

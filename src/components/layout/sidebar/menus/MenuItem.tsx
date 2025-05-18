@@ -13,11 +13,12 @@ export function MenuItem({ item, isActive }: Props) {
 		<li>
 			<Link
 				href={item.link}
-				className='flex items-center gap-5 py-3'
+				className={'group flex items-center gap-5 py-3'}
 			>
 				<item.icon
 					className={cn('min-w-6', {
-						'text-primary rotate-6 transition': isActive
+						'group-hover:text-primary transition group-hover:rotate-6': !isActive,
+						'text-primary': isActive
 					})}
 				/>
 				<span>{item.label}</span>

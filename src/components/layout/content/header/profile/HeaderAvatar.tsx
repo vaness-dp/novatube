@@ -1,9 +1,17 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { SkeletonLoader } from '@/ui/SkeletonLoader'
+
 import { STUDIO_PAGE } from '@/config/studio-page'
 
+import { useProfile } from '@/hooks/useProfile'
+
 export function HeaderAvatar() {
+	const { profile, isLoading } = useProfile()
+
+	if (isLoading) return <SkeletonLoader className='mb-0 w-10 rounded-md' />
+
 	return (
 		<div className='relative'>
 			<Link
@@ -12,7 +20,7 @@ export function HeaderAvatar() {
 				aria-label='Open settings'
 			>
 				<Image
-					src='/images/avatar.png'
+					src={profile?.channel?.avatarUrl || '/images/avatar.png'}
 					alt='profile avatar'
 					width={35}
 					height={35}

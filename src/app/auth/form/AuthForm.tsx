@@ -9,8 +9,6 @@ import { SkeletonLoader } from '@/ui/SkeletonLoader'
 import { Button } from '@/ui/button/Button'
 import { Field } from '@/ui/field/Field'
 
-import { useAuthStore } from '@/store/useAuthStore'
-
 import { AuthToggle } from './AuthToggle'
 import type { IAuthForm } from './auth-form.types'
 import { useAuthForm } from './useAuthForm'
@@ -36,8 +34,6 @@ export function AuthForm({ isLogin }: { isLogin: boolean }) {
 	})
 
 	const { isLoading, onSubmit, recaptchaRef } = useAuthForm(isLogin ? 'login' : 'register', reset)
-
-	const isLoggedIn = useAuthStore(state => state.isLoggedIn)
 
 	return (
 		<form
