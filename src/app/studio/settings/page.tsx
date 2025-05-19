@@ -5,6 +5,8 @@ import { Heading } from '@/ui/Heading'
 
 import { NO_INDEX_PAGE } from '@/constants/seo.constants'
 
+import { SettingsForm } from './SettingsForm'
+
 export const metadata: Metadata = {
 	title: 'Settings',
 	...NO_INDEX_PAGE
@@ -13,7 +15,14 @@ export const metadata: Metadata = {
 export default function SettingsPage() {
 	return (
 		<div>
-			<Heading Icon={Settings}>Settings</Heading>
+			<Heading
+				Icon={Settings}
+				isH1
+			>
+				Settings
+			</Heading>
+
+			<SettingsForm />
 		</div>
 	)
 }

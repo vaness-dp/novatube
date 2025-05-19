@@ -4,14 +4,16 @@ import type { UseFormRegisterReturn } from 'react-hook-form'
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
 	placeholder: string
+	label?: string
 	error?: string
 	registration: UseFormRegisterReturn
 }
 
-export function Field({ placeholder, error, registration, ...props }: Props) {
+export function Field({ placeholder, error, registration, label, ...props }: Props) {
 	return (
 		<div>
 			<label>
+				{label && <span className='mb-2 block font-semibold text-gray-400'>{label}</span>}
 				<input
 					placeholder={placeholder}
 					className={cn(
