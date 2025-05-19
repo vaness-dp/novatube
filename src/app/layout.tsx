@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { SUSE } from 'next/font/google'
 
 import { Providers } from '@/providers/Providers'
 
 import './globals.css'
 
-const inter = Inter({
-	variable: '--font-inter',
+const suse = SUSE({
+	variable: '--font-suse',
 	subsets: ['latin']
 })
 
@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={inter.variable}>
+			<body className={suse.variable}>
 				<Providers>{children}</Providers>
 			</body>
 		</html>

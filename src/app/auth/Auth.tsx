@@ -7,7 +7,7 @@ interface Props {
 
 export function Auth({ isLogin }: Props) {
 	return (
-		<AuthWrapper heading={isLogin ? 'Log in to NTube' : 'Create your account'}>
+		<AuthWrapper heading={isLogin ? 'Log in' : 'Create an account'}>
 			<AuthForm isLogin={isLogin} />
 		</AuthWrapper>
 	)

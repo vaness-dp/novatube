@@ -72,21 +72,12 @@ export function AuthForm({ isLogin }: { isLogin: boolean }) {
 				</>
 			)}
 
-			{isLogin ? (
-				<Button
-					type='submit'
-					isLoading={isLoading}
-				>
-					Send Magic Link
-				</Button>
-			) : (
-				<Button
-					type='submit'
-					isLoading={isLoading}
-				>
-					Create account
-				</Button>
-			)}
+			<Button
+				type='submit'
+				isLoading={isLoading}
+			>
+				Continue
+			</Button>
 
 			<AuthToggle isLogin={isLogin} />
 		</form>

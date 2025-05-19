@@ -18,6 +18,8 @@
 html,
 body {
 	@apply bg-bg text-base text-white;
+
+	font-family: var(--font-suse);
 }
 
 button {
